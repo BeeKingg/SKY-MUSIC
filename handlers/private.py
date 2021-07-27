@@ -51,6 +51,27 @@ async def gstart(_, message: Message):
         )
    )
 
+@Client.on_message(
+    filters.command("start")
+    & filters.group
+    & ~ filters.edited
+)
+async def start(client: Client, message: Message):
+    await message.reply_text(
+        "💁🏻‍♂️ **Apakah anda ingin mencari link youtube?**",
+        reply_markup=InlineKeyboardMarkup(
+            [   
+                [    
+                    InlineKeyboardButton(
+                        "✅ iya", switch_inline_query_current_chat=""
+                    ),
+                    InlineKeyboardButton(
+                        "❌ tidak", callback_data="close"
+                    )
+                ]
+            ]
+        )
+    )
         
 @Client.on_message(
     filters.command("help")
