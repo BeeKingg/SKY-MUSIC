@@ -9,7 +9,7 @@ async def chat_member_updated(_, chat_member_updated: ChatMemberUpdated):
     if chat_member_updated.new_chat_member \
             and chat_member_updated.old_chat_member:
         (
-            admins.admins[chat_member_updated.chat.id].append(
+            cache.admins[chat_member_updated.chat.id].append(
                 chat_member_updated.new_chat_member.user.id,
             )
         ) if (
@@ -18,7 +18,7 @@ async def chat_member_updated(_, chat_member_updated: ChatMemberUpdated):
             ) and (
                 (
                     chat_member_updated.new_chat_member.user.id
-                ) not in admins.admins[chat_member_updated.chat.id]
+                ) not in cache.admins[chat_member_updated.chat.id]
             )
         ) else (
             admins.admins[chat_member_updated.chat.id].remove(
@@ -27,5 +27,5 @@ async def chat_member_updated(_, chat_member_updated: ChatMemberUpdated):
         ) if (
             (
                 chat_member_updated.new_chat_member.user.id
-            ) in admins.admins[chat_member_updated.chat.id]
+            ) in cache.admins[chat_member_updated.chat.id]
         ) else None
