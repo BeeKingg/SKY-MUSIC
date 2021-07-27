@@ -28,6 +28,11 @@
       "required": true,
       "value": "veezasisstant"
     },
+    "BG_IMAGE": {
+      "description": "isi dengan link background image kalian",
+      "required": false,
+      "value": "https://telegra.ph/file/d91623e9cefcef8fb3aa8.png"
+    },
     "OWNER": {
       "description": "isi dengan username kamu",
       "required": false,
