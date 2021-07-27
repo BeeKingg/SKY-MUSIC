@@ -4,9 +4,12 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from config import BOT_NAME, BOT_USERNAME, ASSISTANT_NAME, OWNER, GROUP_SUPPORT, UPDATES_CHANNEL, PROJECT_NAME as bn
 from helpers.filters import other_filters2
 
-
-@Client.on_message(other_filters2)
-async def start(_, message: Message):
+@Client.on_message(
+    filters.command("start")
+    & filters.private
+    & ~ filters.edited
+)
+async def start_(client: Client, message: Message):
     await message.reply_sticker("CAACAgUAAxkBAAELBV5g_zDtu5CEiT6hNd5ZcL7QCzGznAACDQIAAqWPKVTYFqnjbykUNiAE")
     await message.reply_text(
         f"""**👋🏻 Halo {message.from_user.first_name}, saya adalah {BOT_NAME}, bot yang dapat memutar musik di voice chat group kamu.
@@ -113,3 +116,22 @@ async def reload(client: Client, message: Message):
             ]
         )
    )
+
+@Client.on_message(
+    filters.command("guide")
+    & filters.private
+    & ~ filters.edited
+)
+async def start_(client: Client, message: Message):
+    await message.reply_text(
+        """📚 **silahkan baca panduan yang sudah kami siapkan dibawah ini untuk menggunakan bot musik ini:** https://telegra.ph/VEEZ-MUSIC-GUIDE-07-27""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "🔮 CHANNEL SUPPORT", url=f"https://t.me/{UPDATES_CHANNEL}"
+                    )
+                ]
+            ]
+        ),
+    )
