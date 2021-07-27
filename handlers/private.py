@@ -51,16 +51,44 @@ async def gstart(_, message: Message):
         )
    )
 
-@Client.on_message(filters.command("help") & ~filters.private & ~filters.channel)
-async def start(_, message: Message):
-      await message.reply_text("""**💁🏻‍♀️ Hai, silahkan tekan tombol yang ada dibawah ini untuk melihat panduan cara untuk menggunakan bot ini dengan benar, terimakasih.**""",
+        
+@Client.on_message(
+    filters.command("help")
+    & filters.group
+    & ~ filters.edited
+)
+async def help(client: Client, message: Message):
+    await message.reply_text(
+        """**💁🏻‍♀️ Hai, silahkan tekan tombol dibawah untuk melihat panduan untuk menggunakan bot ini, terimakasih.**""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "📜 PANDUAN MEMAKAI BOT 📜", url="https://telegra.ph/VEEZ-MUSIC-GUIDE-07-27"
+                    )
+                ]
+            ]
+        ),
+    )  
+
+    
+@Client.on_message(
+    filters.command("reload")
+    & filters.group
+    & ~ filters.edited
+)
+async def reload(client: Client, message: Message):
+    await message.reply_text("""✅ Bot **berhasil dimulai ulang!**\n\n• **Daftar admin** telah **diperbarui**""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "📜 PANDUAN MENGGUNAKAN BOT 📜", url="https://telegra.ph/VEEZ-MUSIC-GUIDE-07-27")
+                        "🌻 GROUP 🌻", url=f"https://t.me/{GROUP_SUPPORT}"
+                    ),
+                    InlineKeyboardButton(
+                        "🌸 CHANNEL 🌸", url=f"https://t.me/{UPDATES_CHANNEL}"
+                    )
                 ]
             ]
         )
    )
-
