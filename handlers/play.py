@@ -15,7 +15,7 @@ import youtube_dl
 from youtube_search import YoutubeSearch
 import converter
 from downloaders import youtube
-from config import DURATION_LIMIT, UPDATES_CHANNEL, GROUP_SUPPORT
+from config import DURATION_LIMIT, UPDATES_CHANNEL, GROUP_SUPPORT, BG_IMAGE
 from helpers.filters import command
 from helpers.decorators import errors
 from helpers.errors import DurationLimitError
