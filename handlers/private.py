@@ -1,24 +1,20 @@
-import logging
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import BOT_NAME, BOT_USERNAME, ASSISTANT_NAME, OWNER, GROUP_SUPPORT, UPDATES_CHANNEL, PROJECT_NAME as bn
-logging.basicConfig(level=logging.INFO)
+from helpers.filters import other_filters2
 
-@Client.on_message(
-    filters.command("start")
-    & filters.private
-    & ~ filters.edited
-)
-async def start_(client: Client, message: Message):
+@Client.on_message(other_filters2)
+async def start(_, message: Message):
+    await message.reply_sticker("CAACAgQAAx0CTv65QgABBfJlYF6VCrGMm6OJ23AxHmD6qUSWESsAAhoQAAKm8XEeD5nrjz5IJFYeBA")
     await message.reply_text(
         f"""**👋🏻 Halo {message.from_user.first_name}, saya adalah {BOT_NAME}, bot yang dapat memutar musik di voice chat group kamu.
 
-✨ Welcome back to {bn}, Saya adalah bot musik yang dirancang agar dapat memutar musik di voice chat group anda dengan cara yang mudah dan praktis, klik /guide untuk membaca panduan penggunaan.
+✨ Welcome back to {bn}, Saya adalah bot musik yang dirancang agar dapat memutar musik di voice chat group anda dengan cara yang mudah dan praktis.
 
 👩‍💻 Bot ini dikelola oleh {OWNER}.
 
-💁🏻‍♀️ Anda ingin memutar musik di vcg?, silahkan tambahkan saya dan [assistant bot](https://t.me/{ASSISTANT_NAME}) ke grup anda dan jadikan admin.**
+💁🏻‍♀️ Anda ingin memutar musik di vcg?, silahkan tambahkan saya dan @{ASSISTANT_NAME} ke grup anda dan jadikan admin.**
         """,
         reply_markup=InlineKeyboardMarkup(
             [
@@ -38,7 +34,7 @@ async def start_(client: Client, message: Message):
                     )]
             ]
         ),
-     disable_web_page_preview=True
+        reply_to_message_id=message.message_id
     )
 
 @Client.on_message(filters.command("alive") & ~filters.private & ~filters.channel)
@@ -116,22 +112,3 @@ async def reload(client: Client, message: Message):
             ]
         )
    )
-
-@Client.on_message(
-    filters.command("guide")
-    & filters.private
-    & ~ filters.edited
-)
-async def start_(client: Client, message: Message):
-    await message.reply_text(
-        """📚 **silahkan baca panduan yang sudah kami siapkan dibawah ini untuk menggunakan bot musik ini:** https://telegra.ph/VEEZ-MUSIC-GUIDE-07-27""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "🔮 CHANNEL SUPPORT", url=f"https://t.me/{UPDATES_CHANNEL}"
-                    )
-                ]
-            ]
-        ),
-    )
