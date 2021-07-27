@@ -4,9 +4,10 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from config import BOT_NAME, BOT_USERNAME, ASSISTANT_NAME, OWNER, GROUP_SUPPORT, UPDATES_CHANNEL, PROJECT_NAME as bn
 from helpers.filters import other_filters2
 
+
 @Client.on_message(other_filters2)
 async def start(_, message: Message):
-    await message.reply_sticker("CAACAgQAAx0CTv65QgABBfJlYF6VCrGMm6OJ23AxHmD6qUSWESsAAhoQAAKm8XEeD5nrjz5IJFYeBA")
+    await message.reply_sticker("CAACAgUAAxkBAAELBV5g_zDtu5CEiT6hNd5ZcL7QCzGznAACDQIAAqWPKVTYFqnjbykUNiAE")
     await message.reply_text(
         f"""**👋🏻 Halo {message.from_user.first_name}, saya adalah {BOT_NAME}, bot yang dapat memutar musik di voice chat group kamu.
 
@@ -55,7 +56,7 @@ async def gstart(_, message: Message):
     & filters.group
     & ~ filters.edited
 )
-async def start(client: Client, message: Message):
+async def inline(client: Client, message: Message):
     await message.reply_text(
         "💁🏻‍♂️ **Apakah anda ingin mencari link youtube?**",
         reply_markup=InlineKeyboardMarkup(
