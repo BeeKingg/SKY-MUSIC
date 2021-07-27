@@ -1,8 +1,10 @@
+import logging
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import BOT_NAME, BOT_USERNAME, ASSISTANT_NAME, OWNER, GROUP_SUPPORT, UPDATES_CHANNEL, PROJECT_NAME as bn
 from helpers.filters import other_filters2
+logging.basicConfig(level=logging.INFO)
 
 @Client.on_message(other_filters2)
 async def start(_, message: Message):
