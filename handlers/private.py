@@ -14,7 +14,7 @@ async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""**👋🏻 Halo {message.from_user.first_name}, saya adalah {BOT_NAME}, bot yang dapat memutar musik di voice chat group kamu.
 
-✨ Welcome back to {bn}, Saya adalah bot musik yang dirancang agar dapat memutar musik di voice chat group anda dengan cara yang mudah dan praktis.
+✨ Welcome back to {bn}, Saya adalah bot musik yang dirancang agar dapat memutar musik di voice chat group anda dengan cara yang mudah dan praktis, klik /guide untuk membaca panduan penggunaan.
 
 👩‍💻 Bot ini dikelola oleh {OWNER}.
 
