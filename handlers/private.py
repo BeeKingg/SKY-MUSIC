@@ -3,12 +3,14 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import BOT_NAME, BOT_USERNAME, ASSISTANT_NAME, OWNER, GROUP_SUPPORT, UPDATES_CHANNEL, PROJECT_NAME as bn
-from helpers.filters import other_filters2
 logging.basicConfig(level=logging.INFO)
 
-@Client.on_message(other_filters2)
-async def start(_, message: Message):
-    await message.reply_sticker("CAACAgUAAxkBAAELBV5g_zDtu5CEiT6hNd5ZcL7QCzGznAACDQIAAqWPKVTYFqnjbykUNiAE")
+@Client.on_message(
+    filters.command("start")
+    & filters.private
+    & ~ filters.edited
+)
+async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""**👋🏻 Halo {message.from_user.first_name}, saya adalah {BOT_NAME}, bot yang dapat memutar musik di voice chat group kamu.
 
@@ -39,9 +41,9 @@ async def start(_, message: Message):
      disable_web_page_preview=True
     )
 
-@Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
+@Client.on_message(filters.command("alive") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
-      await message.reply_text("""**✅ music player is online.**""",
+      await message.reply_text("""**✅ bot music player is online.**""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -53,7 +55,7 @@ async def gstart(_, message: Message):
    )
 
 @Client.on_message(
-    filters.command("start")
+    filters.command("inline")
     & filters.group
     & ~ filters.edited
 )
