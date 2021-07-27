@@ -115,13 +115,13 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "<b>Add me as admin of yor group first!</b>")
+                        "<b>jadikan saya admin terlebih dahulu!</b>")
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "**veez music assistant joined this group for play music 🎵**")
+                        message.chat.id, "**veez music assistant bergabung ke grup ini untuk memutar musik 🎵**")
 
                 except UserAlreadyParticipant:
                     pass
@@ -218,7 +218,7 @@ async def play(_, message: Message):
                     ]
                 )
         if (dur / 60) > DURATION_LIMIT:
-             await lel.edit(f"❌ Videos longer than {DURATION_LIMIT} minutes aren't allowed to play!")
+             await lel.edit(f"❌ Video lebih dari {DURATION_LIMIT} menit tidak dapat diputar!")
              return
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)     
@@ -272,7 +272,7 @@ async def play(_, message: Message):
             )
         
         if (dur / 60) > DURATION_LIMIT:
-             await lel.edit(f"❌ Videos longer than {DURATION_LIMIT} minutes aren't allowed to play!")
+             await lel.edit(f"❌ Video lebih dari {DURATION_LIMIT} menit tidak dapat diputar!")
              return
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)  
@@ -282,7 +282,7 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
         photo="final.png", 
-        caption="**🏷 Title:** {}\n**⏳ Duration:** {}\n**💡 Request:** {}\n══════════════════════\n**#⃣ Antrian Ke:** {}".format(
+        caption="**🏷 Judul Lagu:** {}\n**⏳ Durasi:** {}\n**🔮 Permintaan:** {}\n💡 Status:**Antrian Ke:** {}".format(
         title, duration, message.from_user.mention(), position
         ),
         reply_markup=keyboard)
@@ -293,8 +293,8 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="**🏷 Title:** {}\n**⏳ Duration:** {}\n**💡 Request:** {}\n══════════════════════\n**▶️ memutar di `{}`**".format(
-        title, duration, message.from_user.mention(), message.chat.title
+        caption="**🏷 Judul Lagu:** {}\n**⏳ Durasi:** {}\n**🔮 Permintaan:** {}\n💡 Status:**Memutar Lagu**".format(
+        title, duration, message.from_user.mention()
         ), )
         os.remove("final.png")
         return await lel.delete()
