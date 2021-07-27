@@ -51,4 +51,16 @@ async def gstart(_, message: Message):
         )
    )
 
+@Client.on_message(filters.command("help") & ~filters.private & ~filters.channel)
+async def start(_, message: Message):
+      await message.reply_text("""**💁🏻‍♀️ Hai, silahkan tekan tombol yang ada dibawah ini untuk melihat panduan cara untuk menggunakan bot ini dengan benar, terimakasih.**""",
+      reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "📜 PANDUAN MENGGUNAKAN BOT 📜", url="https://telegra.ph/VEEZ-MUSIC-GUIDE-07-27")
+                ]
+            ]
+        )
+   )
 
