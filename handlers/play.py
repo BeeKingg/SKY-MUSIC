@@ -155,8 +155,8 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="🌸 CHANNEL 🌸",
-                        url="https://t.me/levinachannel")
+                        text="📮 CHANNEL 📮",
+                        url="https://t.me/BeKing_Bots")
                    
                 ]
             ]
@@ -193,10 +193,10 @@ async def play(_, message: Message):
                 [
                     [
                         InlineKeyboardButton(
-                            text="🔮 GROUP",
+                            text="🔰 GROUP",
                             url=f"https://t.me/{GROUP_SUPPORT}"),
                         InlineKeyboardButton(
-                            text="✨ CHANNEL",
+                            text="📮 CHANNEL",
                             url=f"https://t.me/{UPDATES_CHANNEL}")
 
                     ]
@@ -211,7 +211,7 @@ async def play(_, message: Message):
                     [
                         [
                             InlineKeyboardButton(
-                                text="✨ CHANNEL",
+                                text="📮 CHANNEL",
                                 url=f"https://t.me/{UPDATES_CHANNEL}")
 
                         ]
@@ -261,10 +261,10 @@ async def play(_, message: Message):
                 [
                     [
                         InlineKeyboardButton(
-                            text="🔮 GROUP",
+                            text="🔰 GROUP",
                             url=f"https://t.me/{GROUP_SUPPORT}"),
                         InlineKeyboardButton(
-                            text="✨ CHANNEL",
+                            text="📮 CHANNEL",
                             url=f"https://t.me/{UPDATES_CHANNEL}")
 
                     ]
