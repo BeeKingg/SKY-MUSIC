@@ -29,7 +29,7 @@
 ### Deploy To Heroku</h4>
 Tekan tombol warna ungu dibawah untuk deploy ke heroku.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/levina-lab/veezmusic)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BeeKingg/Sky-Music)
 
 Gunakan [Repl Link](https://replit.com/@SpEcHiDe/GenerateStringSession) untuk mengambil string pyrogram.
 
