@@ -10,12 +10,16 @@ async def start(_, message: Message):
     await message.reply_sticker("CAACAgUAAxkBAAELBV5g_zDtu5CEiT6hNd5ZcL7QCzGznAACDQIAAqWPKVTYFqnjbykUNiAE")
     await message.reply_text(
         f"""**👋🏻 Halo {message.from_user.first_name}, saya adalah {BOT_NAME}, bot yang dapat memutar musik di voice chat group kamu.
-
-✨ Welcome back to {bn}, Saya adalah bot musik yang dirancang agar dapat memutar musik di voice chat group anda dengan cara yang mudah dan praktis.
-
-👩‍💻 Bot ini dikelola oleh {OWNER}.
-
+👩‍💻 Dikelola Oleh {OWNER}
+┈───────────────────┈
+🔰 Saya memiliki banyak fitur untuk anda yang suka lagu
+⚜️ Memutar lagu di group 
+⚜️ Mendownload lagu
+⚜️ Mencari link youtube
+⚜️ Mencari lirik lagu
+┈───────────────────┈
 💁🏻‍♀️ Anda ingin memutar musik di vcg?, silahkan tambahkan saya dan @{ASSISTANT_NAME} ke grup anda dan jadikan admin.**
+✅ Terimakasih Atas Levina & BeeKing
         """,
         reply_markup=InlineKeyboardMarkup(
             [
