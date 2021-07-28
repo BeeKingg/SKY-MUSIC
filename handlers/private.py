@@ -21,17 +21,17 @@ async def start(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "➕ TAMBAHKAN KE GRUP ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                        "➕ TAMBAHKAN KE GROUP ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                   ],[
                     InlineKeyboardButton(
-                        "🌻 GROUP 🌻", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "🔰 GROUP 🔰", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
                     InlineKeyboardButton(
-                        "🌸 CHANNEL 🌸", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "📮 CHANNEL 📮", url=f"https://t.me/{UPDATES_CHANNEL}"
                     )
                 ],[ 
                     InlineKeyboardButton(
-                        "🎁 DONATION", url="https://t.me/dlwrml"
+                        "🎁 DONATION", url="https://t.me/boyfriendnice"
                     )]
             ]
         ),
@@ -45,7 +45,7 @@ async def gstart(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🌸 CHANNEL 🌸", url=f"https://t.me/{UPDATES_CHANNEL}")
+                        "📮 CHANNEL 📮", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ]
             ]
         )
@@ -85,7 +85,7 @@ async def help(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "📜 PANDUAN MEMAKAI BOT 📜", url="https://telegra.ph/VEEZ-MUSIC-GUIDE-07-27"
+                        "📜PANDUAN MENGGUNAKAN BOT📜", url="https://t.me/BeKing_Bots/9"
                     )
                 ]
             ]
@@ -104,10 +104,10 @@ async def reload(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🌻 GROUP", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "👩‍💻 OWNER", url=f"https://t.me/{OWNER}"
                     ),
                     InlineKeyboardButton(
-                        "🌸 CHANNEL", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "📮 CHANNEL", url=f"https://t.me/{UPDATES_CHANNEL}"
                     )
                 ]
             ]
