@@ -22,7 +22,7 @@ from youtube_dl.utils import (
 
 @Client.on_message(filters.command("song") & ~filters.edited)
 async def song(client, message):
-    cap = "🎶Uploader @levinachannel"
+    cap = "🎶Uploader @BeKing_Bots"
     url = message.text.split(None, 1)[1]
     rkp = await message.reply("memproses...")
     if not url:
